@@ -4,11 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9;
-
+    int turn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         b8 =(Button) findViewById(R.id.b8);
         b9 =(Button) findViewById(R.id.b9);
 
+        turn = 1;
 
 
         b1.setOnClickListener(new View.OnClickListener() {
@@ -172,4 +174,110 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    public void endGame(){
+        String a,b,c,d,e,f,g,h,i;
+        boolean end =false;
+
+
+        a = b1.getText().toString();
+        b = b2.getText().toString();
+        c = b3.getText().toString();
+
+        d = b4.getText().toString();
+        e = b5.getText().toString();
+        f = b6.getText().toString();
+
+        g = b7.getText().toString();
+        h = b8.getText().toString();
+        i = b9.getText().toString();
+
+
+        if ( a.equals("X")  && b.equals("X")  && c.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (a.equals("X")  && e.equals("X")  && i.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (a.equals("X")  && d.equals("X")  && g.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (b.equals("X")  && e.equals("X")  && h.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (c.equals("X")  && f.equals("X")  && i.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (d.equals("X")  && e.equals("X")  && f.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (g.equals("X")  && h.equals("X")  && i.equals("X")){
+            Toast.makeText(MainActivity.this, "Winner Player X!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+
+        if ( a.equals("O")  && b.equals("O")  && c.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (a.equals("O")  && e.equals("O")  && i.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (a.equals("O")  && d.equals("O")  && g.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (b.equals("O")  && e.equals("O")  && h.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (c.equals("O")  && f.equals("O")  && i.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (d.equals("O")  && e.equals("O")  && f.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+        if (g.equals("O")  && h.equals("O")  && i.equals("O")){
+            Toast.makeText(MainActivity.this, "Winner Player O!", Toast.LENGTH_LONG).show();
+            end = true;
+        }
+
+
+        if (end) {
+            b1.setEnabled(false);
+            b2.setEnabled(false);
+            b3.setEnabled(false);
+            b4.setEnabled(false);
+            b5.setEnabled(false);
+            b6.setEnabled(false);
+            b7.setEnabled(false);
+            b8.setEnabled(false);
+            b9.setEnabled(false);
+        }
+
+    }
+
+
 }
